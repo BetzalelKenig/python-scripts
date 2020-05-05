@@ -10,4 +10,4 @@ p = soup.find_all('p')
 
 #print(soup.prettify())
 for par in p:
-	print(par)
+	print(par.text)
