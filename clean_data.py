@@ -25,9 +25,10 @@ def remove_not_letters(paragraph):
 
 
 
-def basic_clean(paragraphs):
-	words = paragraphs.split(' ')	
-	clean_text = [re.sub(r'\w*\d\w*', '', word) for word in words]
+def basic_clean(paragraph):
+	words = paragraph.split(' ')	
+	clean_text = [word.lower() for word in words]
+	clean_text = [re.sub(r'\w*\d\w*', '', word) for word in clean_text]
 	clean_text = [re.sub(r'[^a-zA-Z]', '', word) for word in clean_text]
 	return ' '.join(clean_text)
 
@@ -41,7 +42,44 @@ def stemming_the_paragraphs(paragraph):
 
 
 def get_clean_data(url, *label):
-	return [stemming_the_paragraphs(remove_stop_words(basic_clean(p))) for p in get_wiki_text(url)]
+	return clean_paragraph(get_wiki_text(url), [stemming_the_paragraphs(remove_stop_words(basic_clean(p))) for p in get_wiki_text(url)],label, url)
+	
 
-print(get_clean_data(ssh))
+
+
+
+
+
+class clean_paragraph():
+	"""docstring for clean_paragraph"""
+	def __init__(self, original_data, clean_data, label, url):
+		self.original_data = original_data
+		self.clean_data = clean_data
+		self.label = label
+		self.url = url
+
+
+print(get_clean_data(ssh).clean_data)
+		
+		
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
