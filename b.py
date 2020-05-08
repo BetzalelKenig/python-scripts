@@ -23,5 +23,4 @@ def clean_data(text, *label):
 
 
 #print(clean_data('English I i\'m not and no dog dogs 43rg &%^ hg56 [sht] with A HELLO (no) 5rh		 #@%$^%$'))
-#print(nltk.word_tokenize("was'nt in my Case I my i I'm not no"))
-print(string.punctuation)
+print(nltk.word_tokenize("was'nt in my Case I my i I'm not no"))
