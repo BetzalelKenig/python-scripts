@@ -89,18 +89,3 @@ class clean_paragraph():
 	def __getitem__(self, index):
 		'''Allow to access the object properties by index.'''
 		return self.list[index]
-
-
-
-ssh = 'https://en.wikipedia.org/wiki/Secure_Shell'
-pyt = 'https://en.wikipedia.org/wiki/Python_(programming_language)'
-obj1 = get_clean_data(ssh, 'cs')
-obj2 = get_clean_data(pyt, 'cs')
-#print(list(get_clean_data(ssh, 'cs')))
-newobj = obj1 + obj2
-#print(newobj[3])
-first1 = get_clean_data(pyt, 'cs')[1][0]
-for i in get_clean_data(pyt, 'cs')[1]:
-	print (len(i.split(' ')))
-
-
